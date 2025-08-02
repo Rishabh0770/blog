@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Blog Web Application</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="/">BlogWebApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link active bg-info-subtle" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link bg-info-subtle" href="/create.html">Write Blog</a></li>
+          <li class="nav-item"><a class="nav-link bg-info-subtle" href="/manage.html">Manage Blogs</a></li>
+          <li class="nav-item"><a class="nav-link bg-info-subtle" href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="text-bg-dark">
+    <div class="row pt-5 m-0">
+      <div class="blogs-section container pt-5 pb-5">
+        <div id="blog-container" class="pt-3">
+          <h2 class="display-6 fw-bold px-5">Available Blogs</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4 px-5 mt-0" id="blogs-row">
+            <!-- Blog cards will be inserted here dynamically -->
+          </div>
+        </div>
+        <div id="no-blogs" class="px-5 d-none">
+          <h2 class="display-6 fw-bold">No blogs found. <a href="create.html">Write new blog?</a></h2>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-bg-dark">
+    <div class="d-flex justify-content-between border-top pt-2 m-0">
+      <div class="px-4">
+        <p>&copy; 2025 BlogWebApp</p>
+      </div>
+      <div class="px-4">
+        <a href="https://www.instagram.com/rishabh_o8_" style="text-decoration: none; color: #fff;"><i class="bi bi-instagram fs-5"></i></a>
+        <a href="https://github.com/Rishabh0770" style="text-decoration: none; color: #fff;"><i class="bi bi-github fs-5"></i></a>
+        <a href="https://www.linkedin.com/in/rishabh-verma-0484r" style="text-decoration: none; color: #fff;"><i class="bi bi-linkedin fs-5"></i></a>
+        <a href="mailto:rishabhverma0484@gmail.com" style="text-decoration: none; color: #fff;"><i class="bi bi-envelope fs-5"></i></a>
+        <a href="https://wa.me/917018434170" style="text-decoration: none; color: #fff;"><i class="bi bi-whatsapp fs-5"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="/index.js"></script>
+
+  <!-- Blog Management Script -->
+  <script>
+    const blogRow = document.getElementById('blogs-row');
+    const noBlogsDiv = document.getElementById('no-blogs');
+    const blogContainer = document.getElementById('blog-container');
+
+    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    function renderBlogs() {
+      blogRow.innerHTML = "";
+
+      if (blogs.length === 0) {
+        blogContainer.classList.add('d-none');
+        noBlogsDiv.classList.remove('d-none');
+        return;
+      }
+
+      blogs.forEach((blog, index) => {
+        const card = document.createElement('div');
+        card.className = "col";
+        card.innerHTML = `
+          <div class="card custom-card h-100 shadow-lg">
+
+            <div class="card-body">
+              <h5 class="card-title fs-3 fw-bold">${blog.title}</h5>
+              <p class="card-text" style="white-space: pre-line;">${blog.content.slice(0, 200)}...</p>
+            </div>
+            <div class="d-flex flex-wrap gap-2 p-3">
+  <a href="blog.html?id=${index}" class="btn btn-info mb-2">View</a>
+  <a href="update.html?id=${index}" class="btn btn-warning mb-2">Edit</a>
+  <button class="btn btn-danger mb-2" onclick="handleDelete(${index})">Delete</button>
+  <a href="index.html" class="btn btn-secondary mb-2">Back</a>
+</div>
+
+
+          </div>
+        `;
+        blogRow.appendChild(card);
+      });
+    }
+
+    function handleDelete(index) {
+      if (confirm("Are you sure you want to delete this blog?")) {
+        blogs.splice(index, 1);
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+        renderBlogs();
+      }
+    }
+    renderBlogs();
+  </script>
+</body>
+</html>

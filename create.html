@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Blog Web Application</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="/">BlogWebApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active bg-info-subtle" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-info-subtle" href="/create.html">Write Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-info-subtle" href="/manage.html">Manage Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-info-subtle" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+    </nav>
+
+<main class="text-bg-dark p-3">
+    <div class="row pt-5 m-0">
+        <div class="create-blog container pt-5 pb-5 px-5">
+            <div class="shadow-lg p-5">
+                <h1 class="display-5 fw-bold text-center">Create New Blog</h1>
+                <form id="createBlogForm">
+  <div class="mb-3">
+    <label for="titleBlog" class="form-label fs-4 fw-bold">Blog Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="titleBlog"
+      name="titleBlog"
+      placeholder="Title for your blog..."
+      required
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="contentBlog" class="form-label fs-4 fw-bold">Blog Content</label>
+    <textarea
+      class="form-control"
+      id="contentBlog"
+      name="contentBlog"
+      rows="5"
+      placeholder="Write your content here..."
+      required
+    ></textarea>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-lg btn-info mb-3 fw-bold">Publish</button>
+  </div>
+</form>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer class="text-bg-dark" data-bs-theme="dark">
+        <div class="d-flex justify-content-between border-top pt-2 m-0">
+            <div class="px-4">
+                <p>&copy; 2025 BlogWebApp</p>
+            </div>
+            <div class="px-4">
+                <a href="https://www.instagram.com/rishabh_o8_" style="text-decoration: none; color: #fff;"><i class="bi bi-instagram fs-5"></i></a>
+                <a href="https://github.com/Rishabh0770" style="text-decoration: none; color: #fff;"><i class="bi bi-github fs-5"></i></a>
+                <a href="https://www.linkedin.com/in/rishabh-verma-0484r" style="text-decoration: none; color: #fff;"><i class="bi bi-linkedin fs-5"></i></a>
+                <a href="mailto:rishabhverma0484@gmail.com" style="text-decoration: none; color: #fff;"><i class="bi bi-envelope fs-5"></i></a>
+                <a href="https://wa.me/917018434170" style="text-decoration: none; color: #fff;"><i class="bi bi-whatsapp fs-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

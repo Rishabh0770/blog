@@ -1,0 +1,89 @@
+html, body {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+     font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: #0dcaf0 !important;
+}
+
+.navbar-toggler {
+    border: #0dcaf0 solid;
+    border-radius: 0px;
+}
+
+.navbar-toggler:hover {
+    background-color: #0dcaf0;
+    border: #fff solid;
+}
+
+.nav-link,
+.navbar-toggler {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.card {
+    border-radius: 0px;
+}
+
+.form-control {
+    background-color: #adb5bd;
+    color: #fff;
+    border: #0dcaf0 solid;
+    border-radius: 0px;
+}
+
+.custom-card {
+  background-color: #212529; /* Base dark background */
+  color: #f8f9fa;
+  border: 1px solid #0dcaf0;
+  border-radius: 0px;
+  padding: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+}
+
+.custom-card:hover {
+  background-color: #0f2731; /* Subtle cyan-tinted dark shade */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(13, 202, 240, 0.15);
+}
+
+.custom-card .card-title {
+  color: #0dcaf0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.custom-card .card-text {
+  color: #dee2e6;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.custom-card .btn-info {
+  background-color: #0dcaf0;
+  border: none;
+  font-weight: 600;
+}
+
+.custom-card .btn-info:hover {
+  background-color: #0bbbe6;
+}
