@@ -2,7 +2,7 @@
    Global Styles
 ==================================== */
 html, body {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat';       /* Global font family */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -10,12 +10,12 @@ html, body {
 
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;          /* Allow footer to push down */
   font-family: 'Montserrat', sans-serif;
 }
 
 main {
-  flex: 1; /* Pushes footer to bottom */
+  flex: 1;                         /* Push footer to the bottom */
 }
 
 /* ====================================
@@ -23,12 +23,12 @@ main {
 ==================================== */
 .nav-link:hover {
   color: #fff;
-  background-color: #0dcaf0 !important;
+  background-color: #0dcaf0 !important;   /* Highlight link on hover */
 }
 
 .navbar-toggler {
   border: #0dcaf0 solid;
-  border-radius: 0px;
+  border-radius: 0px;              /* Square corners */
 }
 
 .navbar-toggler:hover {
@@ -38,14 +38,14 @@ main {
 
 .nav-link,
 .navbar-toggler {
-  transition: all 0.3s ease-in-out; /* Smooth hover animation */
+  transition: all 0.3s ease-in-out;   /* Smooth transition */
 }
 
 /* ====================================
    Buttons and Cards
 ==================================== */
 .btn {
-  border-radius: 0px;
+  border-radius: 0px;              /* Consistent button shape */
 }
 
 .card {
@@ -56,8 +56,8 @@ main {
    Form Styling
 ==================================== */
 .form-control {
-  background-color: #adb5bd;
-  color: #fff;
+  background-color: #adb5bd;       /* Grey background for input */
+  color: #fff;                     /* White text */
   border: #0dcaf0 solid;
   border-radius: 0px;
 }
@@ -66,18 +66,20 @@ main {
    Custom Card (for blog cards)
 ==================================== */
 .custom-card {
-  background-color: #212529; /* Base dark background */
-  color: #f8f9fa;
+  background-color: #212529;       /* Dark background */
+  color: #f8f9fa;                  /* Light text */
   border: 1px solid #0dcaf0;
   border-radius: 0px;
   padding: 20px;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
   box-shadow: none;
 }
 
 .custom-card:hover {
-  background-color: #0f2731; /* Subtle cyan-tinted dark shade */
-  transform: translateY(-4px);
+  background-color: #0f2731;       /* Slight cyan tint on hover */
+  transform: translateY(-4px);     /* Lift effect */
   box-shadow: 0 8px 20px rgba(13, 202, 240, 0.15);
 }
 
@@ -90,7 +92,7 @@ main {
 .custom-card .card-text {
   color: #dee2e6;
   line-height: 1.6;
-  white-space: pre-line;
+  white-space: pre-line;           /* Preserve line breaks */
 }
 
 .custom-card .btn-info {
@@ -100,16 +102,16 @@ main {
 }
 
 .custom-card .btn-info:hover {
-  background-color: #0bbbe6;
+  background-color: #0bbbe6;       /* Slightly darker on hover */
 }
 
 /* ====================================
    Quill Editor Content Styling
 ==================================== */
 .ql-editor {
-  background-color: #b2cde9; /* Light background */
-  color: #000000; /* Dark readable text */
-  min-height: 250px; /* Minimum height for content area */
+  background-color: #b2cde9;       /* Light editor background */
+  color: #000000;                  /* Dark text for readability */
+  min-height: 250px;               /* Minimum editing area height */
 }
 
 /* ====================================
@@ -123,6 +125,6 @@ main {
 }
 
 .social-icon:hover {
-  color: #0dcaf0; /* Bootstrap info color */
-  transform: scale(1.2);
+  color: #0dcaf0;                  /* Cyan hover color */
+  transform: scale(1.2);           /* Slight zoom effect */
 }

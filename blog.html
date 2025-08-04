@@ -1,261 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
+  <!-- ======================== Meta Tags ======================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Read Blog</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- ======================== Bootstrap CSS ======================== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom Inline CSS Styling -->
+  <!-- ======================== Custom Inline CSS ======================== -->
   <style>
-  body {
-    background-color: #121212;
-    padding-top: 70px;
-    color: #f8f9fa;
-    font-family: 'Montserrat', sans-serif;
-  }
+    body {
+      background-color: #121212;
+      padding-top: 70px;
+      color: #f8f9fa;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-  /* Card Styling */
-  .custom-card {
-    background-color: #212529;
-    border: 1px solid #0dcaf0;
-    border-radius: 0;
-    padding: 20px;
-    height: 750px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s ease;
-    min-height: 400px;
-  }
+    /* Card Styling */
+    .custom-card {
+      background-color: #212529;
+      border: 1px solid #0dcaf0;
+      border-radius: 0;
+      padding: 20px;
+      height: 750px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s ease;
+      min-height: 400px;
+    }
 
-  /* Hover effect for card */
-  .custom-card:hover {
-    background-color: #0f2731;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(13, 202, 240, 0.15);
-  }
+    /* Hover effect for card */
+    .custom-card:hover {
+      background-color: #0f2731;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(13, 202, 240, 0.15);
+    }
 
-  /* Title style */
-  .card-title {
-    color: #0dcaf0;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
+    /* Title style */
+    .card-title {
+      color: #0dcaf0;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
-  /* Blog content styling */
-  .blog-content {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
+    /* Blog content styling */
+    .blog-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
 
-  /* Button row layout */
-  .button-row {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.75rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    border-top: 1px solid #0dcaf0;
-    flex-wrap: nowrap;
-  }
-
-  /* Button styling */
-  .button-row .btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 8px 16px;
-    font-weight: 500;
-    border-radius: 6px;
-    margin: 0;
-    width: auto;
-  }
-
-  .btn-warning {
-    background-color: #ffc107;
-    color: #000;
-    border: none;
-  }
-
-  .btn-info {
-    background-color: #0dcaf0;
-    color: #000;
-    border: none;
-  }
-
-  .btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-    border: none;
-  }
-
-  /* Mobile responsiveness for button row */
-  @media (max-width: 576px) {
+    /* Button row layout */
     .button-row {
       display: flex;
-      flex-wrap: nowrap !important;
-      overflow-x: unset !important;
       justify-content: flex-end;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top: 1px solid #0dcaf0;
+      flex-wrap: nowrap;
     }
 
+    /* Button styling */
     .button-row .btn {
-      flex: 0 0 auto !important;
+      flex: 0 0 auto;
       white-space: nowrap;
-      width: auto !important;
-      padding: 6px 12px !important;
-      font-size: 14px;
-      margin: 0 !important;
+      padding: 8px 16px;
+      font-weight: 500;
+      border-radius: 6px;
+      margin: 0;
+      width: auto;
     }
 
-  .custom-card {
-    padding: 15px;
-    height: auto; /* Let the height grow with content */
-  }
+    .btn-warning {
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+    }
 
-  .card-title {
-    font-size: 1.25rem;
-  }
+    .btn-info {
+      background-color: #0dcaf0;
+      color: #000;
+      border: none;
+    }
 
-  .blog-content {
-    max-height: 400px;
-    font-size: 0.95rem;
-  }
+    .btn-secondary {
+      background-color: #6c757d;
+      color: #fff;
+      border: none;
+    }
 
-    .d-flex.gap-2.mt-auto {
-    flex-direction: row !important;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5rem !important;
-  }
+    /* Responsive Button Row (Mobile) */
+    @media (max-width: 576px) {
+      .button-row {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow-x: unset !important;
+        justify-content: flex-end;
+        gap: 0.5rem;
+      }
 
-  .d-flex.gap-2.mt-auto .btn {
-    flex: 0 0 auto !important;
-    white-space: nowrap;
-    width: auto !important;
-    padding: 6px 12px;
-    font-size: 14px;
-  }
+      .button-row .btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap;
+        width: auto !important;
+        padding: 6px 12px !important;
+        font-size: 14px;
+        margin: 0 !important;
+      }
 
-  nav .navbar-brand {
-    font-size: 1.2rem;
-  }
+      .custom-card {
+        padding: 15px;
+        height: auto;
+      }
 
-  nav .nav-link {
-    font-size: 0.95rem;
-  }
-}
+      .card-title {
+        font-size: 1.25rem;
+      }
 
+      .blog-content {
+        max-height: 400px;
+        font-size: 0.95rem;
+      }
+
+      .d-flex.gap-2.mt-auto {
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem !important;
+      }
+
+      .d-flex.gap-2.mt-auto .btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap;
+        width: auto !important;
+        padding: 6px 12px;
+        font-size: 14px;
+      }
+
+      nav .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      nav .nav-link {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-
+  <!-- ======================== Navbar ======================== -->
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="index.html">BlogWebApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link active bg-info-subtle" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="create.html">Write Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="manage.html">Manage Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>  
-        </div>
-    </nav>
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">BlogWebApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item">
+            <a class="nav-link active bg-info-subtle" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="create.html">Write Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="manage.html">Manage Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- ======================== Blog Container ======================== -->
   <main class="container my-5 px-3">
-  <div id="blogContent" class="mx-auto" style="max-width: 900px;"></div>
-</main>
+    <div id="blogContent" class="mx-auto" style="max-width: 900px;"></div>
+  </main>
 
-
-
-
-   <!-- Footer -->
-    <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
-        <div class="container">
-            <div class="row align-items-center py-3">
-
-                <!-- Left Column: Copyright -->
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    <p class="mb-0">&copy; 2025 BlogWebApp</p>
-                </div>
-
-                <!-- Right Column: Social Media Icons -->
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
-                        <i class="bi bi-instagram fs-5"></i>
-                    </a>
-                    <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
-                        <i class="bi bi-github fs-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin fs-5"></i>
-                    </a>
-                    <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
-                        <i class="bi bi-envelope fs-5"></i>
-                    </a>
-                    <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
-                        <i class="bi bi-whatsapp fs-5"></i>
-                    </a>
-                </div>
-
-            </div>
+  <!-- ======================== Footer ======================== -->
+  <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <!-- Left Column -->
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="mb-0">&copy; 2025 BlogWebApp</p>
         </div>
-    </footer>
+        <!-- Right Column -->
+        <div class="col-md-6 text-center text-md-end">
+          <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
+            <i class="bi bi-instagram fs-5"></i>
+          </a>
+          <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
+            <i class="bi bi-github fs-5"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
+            <i class="bi bi-linkedin fs-5"></i>
+          </a>
+          <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
+            <i class="bi bi-envelope fs-5"></i>
+          </a>
+          <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp fs-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <!-- ======================== Script for Blog Data ======================== -->
   <script>
-const params = new URLSearchParams(window.location.search);
-const blogId = params.get("id");
-const blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
-const blog = blogs[blogId];
+    // Extract blog ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get("id");
 
-if (blog) {
-  document.getElementById("blogContent").innerHTML = `
-  <div class="custom-card p-4">
-    <div class="card-body p-0 mb-3">
-      <h1 class="card-title mb-3">${blog.title}</h1>
-      <div class="blog-content">${blog.content}</div>
-    </div>
-    <div class="d-flex justify-content-end gap-2 mt-auto">
-      <a href="update.html?id=${blogId}" class="btn btn-warning">Edit Blog</a>
-      <a href="manage.html" class="btn btn-info">Manage Blogs</a>
-      <a href="index.html" class="btn btn-secondary">Back</a>
-    </div>
-  </div>
-`;
+    // Retrieve blogs from localStorage
+    const blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
+    const blog = blogs[blogId];
 
-
-
-
-} else {
-  document.getElementById("blogContent").innerHTML = `<h2>Blog not found.</h2>`;
-}
-
-</script>
+    // Render blog if found
+    if (blog) {
+      document.getElementById("blogContent").innerHTML = `
+        <div class="custom-card p-4">
+          <div class="card-body p-0 mb-3">
+            <h1 class="card-title mb-3">${blog.title}</h1>
+            <div class="blog-content">${blog.content}</div>
+          </div>
+          <div class="d-flex justify-content-end gap-2 mt-auto">
+            <a href="update.html?id=${blogId}" class="btn btn-warning">Edit Blog</a>
+            <a href="manage.html" class="btn btn-info">Manage Blogs</a>
+            <a href="index.html" class="btn btn-secondary">Back</a>
+          </div>
+        </div>`;
+    } else {
+      document.getElementById("blogContent").innerHTML = `<h2>Blog not found.</h2>`;
+    }
+  </script>
 
 </body>
 </html>

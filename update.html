@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Update Blog</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body class="text-bg-dark">
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="index.html">BlogWebApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link active bg-info-subtle" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="create.html">Write Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="manage.html">Manage Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info-subtle" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>  
-        </div>
-    </nav>
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">BlogWebApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse m-2 justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item">
+            <a class="nav-link active bg-info-subtle" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="create.html">Write Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="manage.html">Manage Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-info-subtle" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>  
+    </div>
+  </nav>
 
+  <!-- Main Content -->
   <main class="container py-5 mt-5 pt-5">
     <div class="p-4 shadow bg-dark rounded">
       <h1 class="mb-4">Update Blog</h1>
+      
+      <!-- Blog Update Form -->
       <form id="updateForm">
         <div class="mb-3">
           <label class="form-label">Title</label>
@@ -51,73 +61,80 @@
           <button type="submit" class="btn btn-info fw-bold">Update Blog</button>
         </div>
       </form>
-      
-
     </div>
   </main>
 
   <!-- Footer -->
-    <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
-        <div class="container">
-            <div class="row align-items-center py-3">
+  <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
+    <div class="container">
+      <div class="row align-items-center py-3">
 
-                <!-- Left Column: Copyright -->
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    <p class="mb-0">&copy; 2025 BlogWebApp</p>
-                </div>
-
-                <!-- Right Column: Social Media Icons -->
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
-                        <i class="bi bi-instagram fs-5"></i>
-                    </a>
-                    <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
-                        <i class="bi bi-github fs-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin fs-5"></i>
-                    </a>
-                    <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
-                        <i class="bi bi-envelope fs-5"></i>
-                    </a>
-                    <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
-                        <i class="bi bi-whatsapp fs-5"></i>
-                    </a>
-                </div>
-
-            </div>
+        <!-- Left Column: Copyright -->
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="mb-0">&copy; 2025 BlogWebApp</p>
         </div>
-    </footer>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const blogId = params.get("id");
-  let blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
-  let blog = blogs[blogId];
+        <!-- Right Column: Social Media Icons -->
+        <div class="col-md-6 text-center text-md-end">
+          <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
+            <i class="bi bi-instagram fs-5"></i>
+          </a>
+          <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
+            <i class="bi bi-github fs-5"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
+            <i class="bi bi-linkedin fs-5"></i>
+          </a>
+          <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
+            <i class="bi bi-envelope fs-5"></i>
+          </a>
+          <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp fs-5"></i>
+          </a>
+        </div>
 
-  if (!blog) {
-    document.body.innerHTML = "<h2 class='text-center mt-5'>Blog not found.</h2>";
-  } else {
-    document.getElementById("blogTitle").value = blog.title;
-    document.getElementById("blogContent").value = blog.content;
+      </div>
+    </div>
+  </footer>
 
-    document.getElementById("updateForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+  <!-- Blog Update Script -->
+  <script>
+    // Extract blog ID from URL query parameters
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get("id");
 
-      // Update the blog using array index
-      blogs[blogId] = {
-        ...blog,
-        title: document.getElementById("blogTitle").value,
-        content: document.getElementById("blogContent").value
-      };
+    // Retrieve blog data from localStorage
+    let blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
+    let blog = blogs[blogId];
 
-      localStorage.setItem("blogs", JSON.stringify(blogs));
-      alert("Blog updated!");
-      window.location.href = "manage.html"; // or "index.html" if you prefer
-    });
-  }
-</script>
+    if (!blog) {
+      // If blog not found, display message
+      document.body.innerHTML = "<h2 class='text-center mt-5'>Blog not found.</h2>";
+    } else {
+      // Pre-fill form with existing blog data
+      document.getElementById("blogTitle").value = blog.title;
+      document.getElementById("blogContent").value = blog.content;
 
+      // Handle form submission to update the blog
+      document.getElementById("updateForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Update blog object at specific index
+        blogs[blogId] = {
+          ...blog,
+          title: document.getElementById("blogTitle").value,
+          content: document.getElementById("blogContent").value
+        };
+
+        // Save updated blogs array back to localStorage
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+
+        // Notify user and redirect
+        alert("Blog updated!");
+        window.location.href = "manage.html"; // Redirect to manage page
+      });
+    }
+  </script>
 
 </body>
 </html>

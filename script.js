@@ -1,10 +1,15 @@
 // script.js — shared by all pages
 
-// Utility functions
+// -------------------------------------------------------------
+// Utility function: Fetch blogs from localStorage
+// -------------------------------------------------------------
 function getBlogs() {
   return JSON.parse(localStorage.getItem("blogs") || "[]");
 }
 
+// -------------------------------------------------------------
+// UI Component: Create a single blog card (used on index.html)
+// -------------------------------------------------------------
 function createBlogCard(blog, index) {
   return `
     <div class="col">
@@ -20,8 +25,9 @@ function createBlogCard(blog, index) {
     </div>`;
 }
 
-
-// Load blogs on homepage
+// -------------------------------------------------------------
+// Homepage (index.html): Load and display all blog cards
+// -------------------------------------------------------------
 if (document.getElementById("blogList")) {
   const blogList = document.getElementById("blogList");
   const noBlogsMsg = document.getElementById("noBlogs");
@@ -35,8 +41,9 @@ if (document.getElementById("blogList")) {
   }
 }
 
-// Create new blog page //
-// Save blog from create.html form
+// -------------------------------------------------------------
+// Create Blog Page (create.html): Form submission handler
+// -------------------------------------------------------------
 if (document.getElementById("createBlogForm")) {
   const form = document.getElementById("createBlogForm");
 
@@ -66,9 +73,9 @@ if (document.getElementById("createBlogForm")) {
   });
 }
 
-
-
-// Store new blog
+// -------------------------------------------------------------
+// Save blog into localStorage (used in alternative flow)
+// -------------------------------------------------------------
 function saveBlog(title, content) {
   const blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
   const newBlog = {
@@ -80,7 +87,9 @@ function saveBlog(title, content) {
   localStorage.setItem("blogs", JSON.stringify(blogs));
 }
 
-// Load blogs for manage.html
+// -------------------------------------------------------------
+// Manage Page (manage.html): Load blogs into card layout
+// -------------------------------------------------------------
 function loadBlogs() {
   const blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
   const container = document.getElementById("blogsContainer");
@@ -118,7 +127,9 @@ function loadBlogs() {
   container.innerHTML = output;
 }
 
-// Delete blog by ID
+// -------------------------------------------------------------
+// Delete blog by ID from localStorage and reload list
+// -------------------------------------------------------------
 function deleteBlog(id) {
   let blogs = JSON.parse(localStorage.getItem("blogs") || "[]");
   blogs = blogs.filter(blog => blog.id !== id);
@@ -126,7 +137,9 @@ function deleteBlog(id) {
   loadBlogs(); // Refresh list after deletion
 }
 
-// Handle blog form submission
+// -------------------------------------------------------------
+// Fallback blog creation (used in manage.html)
+// -------------------------------------------------------------
 const createForm = document.getElementById("createForm");
 if (createForm) {
   createForm.addEventListener("submit", function (e) {
@@ -143,7 +156,9 @@ if (createForm) {
   });
 }
 
-// Load blogs when on manage.html
+// -------------------------------------------------------------
+// Load blogs automatically on manage.html when page loads
+// -------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("manage.html")) {
     loadBlogs();
