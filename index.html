@@ -10,6 +10,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
     <title>Blog Web Application</title>
+    <style>
+        .card-body {
+            min-height: 200px; /* Minimum height for each blog card */
+
+        }
+
+        .card-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;  /* Limit content to 4 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            line-height: 1.6;
+            min-height: calc(1.6em * 4); /* Uniform height for all cards */
+        }
+        @media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+    padding: 1rem !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-section .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Image beside hero */
+  .hero-section + div img {
+    margin-top: 1.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Blog cards layout */
+  #blogList {
+    padding: 0 1rem !important;
+  }
+
+  /* Footer icons spacing */
+  footer .social-icon {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .col-md-6 {
+    width: 100%;
+  }
+}
+
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
@@ -64,35 +134,38 @@
 </div>
 </main>
 
-    <footer class="text-bg-dark" data-bs-theme="dark">
-  <div class="container py-3 border-top">
-    <div class="row align-items-center">
-      <!-- Left side: copyright -->
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0 px-3">
-        <p class="mb-0">&copy; 2025 BlogWebApp</p>
-      </div>
+    <!-- Footer -->
+    <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
 
-      <!-- Right side: social icons -->
-      <div class="col-md-6 text-center text-md-end px-3">
-        <a href="https://www.instagram.com/rishabh_o8_" class="text-white mx-2" aria-label="Instagram">
-          <i class="bi bi-instagram fs-5"></i>
-        </a>
-        <a href="https://github.com/Rishabh0770" class="text-white mx-2" aria-label="GitHub">
-          <i class="bi bi-github fs-5"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="text-white mx-2" aria-label="LinkedIn">
-          <i class="bi bi-linkedin fs-5"></i>
-        </a>
-        <a href="mailto:rishabhverma0484@gmail.com" class="text-white mx-2" aria-label="Email">
-          <i class="bi bi-envelope fs-5"></i>
-        </a>
-        <a href="https://wa.me/917018434170" class="text-white mx-2" aria-label="WhatsApp">
-          <i class="bi bi-whatsapp fs-5"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+                <!-- Left Column: Copyright -->
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="mb-0">&copy; 2025 BlogWebApp</p>
+                </div>
+
+                <!-- Right Column: Social Media Icons -->
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
+                        <i class="bi bi-instagram fs-5"></i>
+                    </a>
+                    <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
+                        <i class="bi bi-github fs-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin fs-5"></i>
+                    </a>
+                    <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="bi bi-envelope fs-5"></i>
+                    </a>
+                    <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp fs-5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <script src="script.js"></script>

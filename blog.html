@@ -1,42 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Read Blog</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/index.css" />
+
+  <!-- Custom Inline CSS Styling -->
   <style>
-  .custom-card {
-    background-color: #212529; /* Base dark background */
+  body {
+    background-color: #121212;
+    padding-top: 70px;
     color: #f8f9fa;
-    border: 1px solid #0dcaf0;
-    border-radius: 0px;
-    padding: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
   }
 
+  /* Card Styling */
+  .custom-card {
+    background-color: #212529;
+    border: 1px solid #0dcaf0;
+    border-radius: 0;
+    padding: 20px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+    min-height: 400px;
+  }
+
+  /* Hover effect for card */
   .custom-card:hover {
-    background-color: #0f2731; /* Subtle cyan-tinted dark shade */
+    background-color: #0f2731;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(13, 202, 240, 0.15);
   }
 
-  .custom-card .card-title {
+  /* Title style */
+  .card-title {
     color: #0dcaf0;
     font-weight: 600;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  .custom-card .card-text {
-    color: #dee2e6;
+  /* Blog content styling */
+  .blog-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
     line-height: 1.6;
-    white-space: pre-line;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
-</style>
+
+  /* Button row layout */
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #0dcaf0;
+    flex-wrap: nowrap;
+  }
+
+  /* Button styling */
+  .button-row .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    margin: 0;
+    width: auto;
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+  }
+
+  .btn-info {
+    background-color: #0dcaf0;
+    color: #000;
+    border: none;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+  }
+
+  /* Mobile responsiveness for button row */
+  @media (max-width: 576px) {
+    .button-row {
+      display: flex;
+      flex-wrap: nowrap !important;
+      overflow-x: unset !important;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .button-row .btn {
+      flex: 0 0 auto !important;
+      white-space: nowrap;
+      width: auto !important;
+      padding: 6px 12px !important;
+      font-size: 14px;
+      margin: 0 !important;
+    }
+
+  .custom-card {
+    padding: 15px;
+    height: auto; /* Let the height grow with content */
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .blog-content {
+    max-height: 400px;
+    font-size: 0.95rem;
+  }
+
+    .d-flex.gap-2.mt-auto {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem !important;
+  }
+
+  .d-flex.gap-2.mt-auto .btn {
+    flex: 0 0 auto !important;
+    white-space: nowrap;
+    width: auto !important;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  nav .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  nav .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+  </style>
 </head>
-<body class="text-bg-dark">
+
+<body>
+
 
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
         <div class="container-fluid px-5">
@@ -63,23 +187,42 @@
         </div>
     </nav>
 
-  <main class="d-flex justify-content-center align-items-center min-vh-100 px-3">
-  <div id="blogContent" class="w-100" style="max-width: 900px;"></div>
+  <main class="container my-5 px-3">
+  <div id="blogContent" class="mx-auto" style="max-width: 900px;"></div>
 </main>
 
 
 
-   <footer class="text-bg-dark" data-bs-theme="dark">
-        <div class="d-flex justify-content-between border-top pt-2 m-0">
-            <div class="px-4">
-                <p>&copy; 2025 BlogWebApp</p>
-            </div>
-            <div class="px-4">
-                <a href="https://www.instagram.com/rishabh_o8_" style="text-decoration: none; color: #fff;"><i class="bi bi-instagram fs-5"></i></a>
-                <a href="https://github.com/Rishabh0770" style="text-decoration: none; color: #fff;"><i class="bi bi-github fs-5"></i></a>
-                <a href="https://www.linkedin.com/in/rishabh-verma-0484r" style="text-decoration: none; color: #fff;"><i class="bi bi-linkedin fs-5"></i></a>
-                <a href="mailto:rishabhverma0484@gmail.com" style="text-decoration: none; color: #fff;"><i class="bi bi-envelope fs-5"></i></a>
-                <a href="https://wa.me/917018434170" style="text-decoration: none; color: #fff;"><i class="bi bi-whatsapp fs-5"></i></a>
+
+   <!-- Footer -->
+    <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+
+                <!-- Left Column: Copyright -->
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="mb-0">&copy; 2025 BlogWebApp</p>
+                </div>
+
+                <!-- Right Column: Social Media Icons -->
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
+                        <i class="bi bi-instagram fs-5"></i>
+                    </a>
+                    <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
+                        <i class="bi bi-github fs-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin fs-5"></i>
+                    </a>
+                    <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="bi bi-envelope fs-5"></i>
+                    </a>
+                    <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp fs-5"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
     </footer>
@@ -92,18 +235,19 @@ const blog = blogs[blogId];
 
 if (blog) {
   document.getElementById("blogContent").innerHTML = `
-  <div class="custom-card">
-    <div class="card-body">
+  <div class="custom-card p-4">
+    <div class="card-body p-0 mb-3">
       <h1 class="card-title mb-3">${blog.title}</h1>
-      <p class="card-text lead">${blog.content}</p>
-      <div class="d-flex flex-wrap gap-2 mt-4">
-        <a href="update.html?id=${blogId}" class="btn btn-warning">Edit Blog</a>
-        <a href="manage.html" class="btn btn-info">Manage Blogs</a>
-        <a href="index.html" class="btn btn-secondary">Back</a>
-      </div>
+      <div class="blog-content">${blog.content}</div>
+    </div>
+    <div class="d-flex justify-content-end gap-2 mt-auto">
+      <a href="update.html?id=${blogId}" class="btn btn-warning">Edit Blog</a>
+      <a href="manage.html" class="btn btn-info">Manage Blogs</a>
+      <a href="index.html" class="btn btn-secondary">Back</a>
     </div>
   </div>
 `;
+
 
 
 

@@ -1,55 +1,70 @@
+/* ====================================
+   Global Styles
+==================================== */
 html, body {
-    font-family: 'Montserrat';
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  font-family: 'Montserrat';
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-     font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
-    flex: 1;
+  flex: 1; /* Pushes footer to bottom */
 }
 
+/* ====================================
+   Navbar Styling
+==================================== */
 .nav-link:hover {
-    color: #fff;
-    background-color: #0dcaf0 !important;
+  color: #fff;
+  background-color: #0dcaf0 !important;
 }
 
 .navbar-toggler {
-    border: #0dcaf0 solid;
-    border-radius: 0px;
+  border: #0dcaf0 solid;
+  border-radius: 0px;
 }
 
 .navbar-toggler:hover {
-    background-color: #0dcaf0;
-    border: #fff solid;
+  background-color: #0dcaf0;
+  border: #fff solid;
 }
 
 .nav-link,
 .navbar-toggler {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; /* Smooth hover animation */
 }
 
+/* ====================================
+   Buttons and Cards
+==================================== */
 .btn {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
 .card {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
+/* ====================================
+   Form Styling
+==================================== */
 .form-control {
-    background-color: #adb5bd;
-    color: #fff;
-    border: #0dcaf0 solid;
-    border-radius: 0px;
+  background-color: #adb5bd;
+  color: #fff;
+  border: #0dcaf0 solid;
+  border-radius: 0px;
 }
 
+/* ====================================
+   Custom Card (for blog cards)
+==================================== */
 .custom-card {
   background-color: #212529; /* Base dark background */
   color: #f8f9fa;
@@ -86,4 +101,28 @@ main {
 
 .custom-card .btn-info:hover {
   background-color: #0bbbe6;
+}
+
+/* ====================================
+   Quill Editor Content Styling
+==================================== */
+.ql-editor {
+  background-color: #b2cde9; /* Light background */
+  color: #000000; /* Dark readable text */
+  min-height: 250px; /* Minimum height for content area */
+}
+
+/* ====================================
+   Social Icon Styling
+==================================== */
+.social-icon {
+  color: #ffffff;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: #0dcaf0; /* Bootstrap info color */
+  transform: scale(1.2);
 }

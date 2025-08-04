@@ -10,6 +10,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
   <title>Blog Web Application</title>
+  <style>
+    .card-body {
+      min-height: unset; /* Optional: reset height */
+    }
+
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* Show only 4 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      line-height: 1.6;
+      /* Removed fixed min-height for flexibility */
+    }
+  @media (max-width: 576px) {
+    .blog-buttons {
+      flex-wrap: nowrap !important;
+      overflow-x: auto;
+      justify-content: start !important;
+    }
+
+    .blog-buttons a,
+    .blog-buttons button {
+      white-space: nowrap;
+      width: auto !important;
+      flex: 0 0 auto;
+    }
+  }
+
+  </style>
 </head>
 <body>
 
@@ -49,20 +80,38 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-bg-dark">
-    <div class="d-flex justify-content-between border-top pt-2 m-0">
-      <div class="px-4">
-        <p>&copy; 2025 BlogWebApp</p>
-      </div>
-      <div class="px-4">
-        <a href="https://www.instagram.com/rishabh_o8_" style="text-decoration: none; color: #fff;"><i class="bi bi-instagram fs-5"></i></a>
-        <a href="https://github.com/Rishabh0770" style="text-decoration: none; color: #fff;"><i class="bi bi-github fs-5"></i></a>
-        <a href="https://www.linkedin.com/in/rishabh-verma-0484r" style="text-decoration: none; color: #fff;"><i class="bi bi-linkedin fs-5"></i></a>
-        <a href="mailto:rishabhverma0484@gmail.com" style="text-decoration: none; color: #fff;"><i class="bi bi-envelope fs-5"></i></a>
-        <a href="https://wa.me/917018434170" style="text-decoration: none; color: #fff;"><i class="bi bi-whatsapp fs-5"></i></a>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer -->
+    <footer class="text-bg-dark pt-3 border-top" data-bs-theme="dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+
+                <!-- Left Column: Copyright -->
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="mb-0">&copy; 2025 BlogWebApp</p>
+                </div>
+
+                <!-- Right Column: Social Media Icons -->
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://www.instagram.com/rishabh_o8_" class="social-icon" aria-label="Instagram">
+                        <i class="bi bi-instagram fs-5"></i>
+                    </a>
+                    <a href="https://github.com/Rishabh0770" class="social-icon" aria-label="GitHub">
+                        <i class="bi bi-github fs-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishabh-verma-0484r" class="social-icon" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin fs-5"></i>
+                    </a>
+                    <a href="mailto:rishabhverma0484@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="bi bi-envelope fs-5"></i>
+                    </a>
+                    <a href="https://wa.me/917018434170" class="social-icon" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp fs-5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
